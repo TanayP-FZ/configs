@@ -22,3 +22,11 @@ source $ZSH/oh-my-zsh.sh
 # Fix omz slow pasting
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/295#issuecomment-214581607
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
+# https://github.com/Wilfred/difftastic
+# cargo install difftastic
+# https://difftastic.wilfred.me.uk/git.html
+# Use with: diff, log -p, show
+gt() {
+    GIT_EXTERNAL_DIFF=difft git $1 --ext-diff $@[2,-1]
+}
